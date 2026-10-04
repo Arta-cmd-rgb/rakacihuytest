@@ -1,0 +1,1997 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#050505" />
+  <title>Raka Cihuyyy Agency</title>
+  <meta name="description" content="Portofolio Raka Cihuyyy Visual Editor & Motion Designer, Motion Graphics Desain Grafis Video Editing"/>
+
+  <!-- favicon -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png" />
+  <link rel="icon" href="favicon.ico" sizes="48x48" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" style="border-radius:50%" />
+
+  <!-- Font utama: Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!--  FONT AWESOME -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer" />
+
+  <!-- AOS  -->
+
+  <!-- aos -->
+  <link rel="stylesheet" href="style.css">
+
+  
+  <script>
+  (function resetScrollEarly() {
+    // Matikan restore posisi scroll bawaan browser.
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+
+    // Buang hash (#about dll) — kalau dibiarkan, browser meloncat
+    // ke section itu begitu elemennya ada.
+    if (location.hash) {
+      try { history.replaceState(null, '', location.pathname + location.search); }
+      catch (err) { /* file:// — replaceState tidak didukung */ }
+    }
+  })();
+  </script>
+</head>
+
+<body class="is-loading">
+
+  <!-- PRELOADER -->
+  <div id="preloader" class="preloader" aria-hidden="true">
+    <div class="pl-inner">
+      <span class="pl-mark">RAKA<span class="logo-dot">.</span></span>
+      <div class="pl-bar"><i class="pl-fill" id="pl-fill"></i></div>
+      <span class="pl-meta">
+        <span class="micro">Portfolio &mdash; 2026</span>
+        <span class="pl-count tnum" id="pl-count">00</span>
+      </span>
+    </div>
+    <span class="pl-curtain"></span>
+  </div>
+
+  <!-- Latar sekarang satu gradient menyatu di elemen body (lihat blok 2 di style.css).
+       Aurora .bg-base yang lama sudah dihapus: drift-nya membuat merah
+       terlihat bergeser-bergeser antar section. -->
+
+  <!-- Grain + progres scroll.
+       Cursor kustom DIHAPUS (lihat blok 5 di style.css): layer fixed
+       yang di-rAF-kan setiap mousemove itu mahal, dan men-disable
+       cursor asli jadi sucks di perangkat sentuh. -->
+  <div class="grain" aria-hidden="true"></div>
+  <div id="scroll-bar" aria-hidden="true"></div>
+
+  <!-- NAVBAR -->
+  <header id="site-header" class="site-header">
+    <nav class="wrap nav" aria-label="Navigasi utama">
+      <a href="#home" class="logo" aria-label="Raka Cihuyyy — Beranda"><img class="logo-img" src="logo.png" alt="Raka Cihuyyy" decoding="async"><span class="logo-txt">Raka<span class="logo-dot">.</span></span></a>
+
+      <ul class="nav-links">
+        <li><a href="#home"     class="nav-link is-active">Home</a></li>
+        <li><a href="#about"    class="nav-link">About</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#designs"  class="nav-link">Designs</a></li>
+        <li><a href="#pricing"  class="nav-link">Price</a></li>
+        <li><a href="#contact"  class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <a href="#contact" class="btn btn-line-red nav-cta">
+          <svg class="btn-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+          <span>Hubungi Saya</span>
+        </a>
+        <button id="menu-btn" class="menu-btn tap" aria-label="Buka menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MENU MOBILE -->
+  <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+    <div class="mm-head">
+      <span class="logo">RAKA<span class="logo-dot">.</span></span>
+      <button id="mm-close" class="mm-close" aria-label="Tutup menu"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+    </div>
+
+    <nav aria-label="Navigasi mobile">
+      <ul class="mm-links">
+        <li><a href="#home"     class="mm-link"><span class="idx">01</span> Home</a></li>
+        <li><a href="#about"    class="mm-link"><span class="idx">02</span> About</a></li>
+        <li><a href="#projects" class="mm-link"><span class="idx">03</span> Projects</a></li>
+        <li><a href="#designs"  class="mm-link"><span class="idx">04</span> Designs</a></li>
+        <li><a href="#pricing"  class="mm-link"><span class="idx">05</span> Price</a></li>
+        <li><a href="#contact"  class="mm-link"><span class="idx">06</span> Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="mm-foot">
+      <a href="#contact" class="btn btn-line-red"><svg class="btn-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg><span>Hubungi Saya</span></a>
+      <div class="socials" style="margin-top:0">
+        <a href="https://instagram.com/raka_cihuyyy" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://tiktok.com/@raka_cihuyy" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="https://sociabuzz.com/raka_cihuyyy" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="Sociabuzz"><i class="fa-solid fa-hand-holding-dollar"></i></a>
+        <a href="https://wa.me/6281999898009" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="mailto:yagazgaming@gmail.com" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-wrapper">
+
+    <main>
+
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="wrap hero-grid">
+
+        <div class="hero-rail" aria-hidden="true">
+          <span class="rail-text">Scroll to explore</span>
+          <i class="rail-line"></i>
+          <span class="rail-arrow"><i class="fa-solid fa-arrow-down"></i></span>
+        </div>
+
+        <div class="hero-head">
+          <p class="status-line" data-reveal="up">
+            <span class="rec-dot" aria-hidden="true"></span> Available for freelance
+          </p>
+
+          <h1 class="hero-title" data-split>
+            <span class="line"><span class="line-in">Raka</span></span>
+            <span class="line outline"><span class="line-in">Cihuyyy</span></span>
+          </h1>
+
+          <h2 class="hero-typing" data-reveal="up" data-reveal-delay="140">
+            <span id="typing-text">Visual Editor</span><span class="typing-caret" aria-hidden="true">|</span>
+          </h2>
+        </div>
+
+        <div class="hero-body">
+          <p class="hero-bio" data-reveal="up" data-reveal-delay="200">
+            Mengubah footage mentah menjadi cerita visual yang rapi, padat,
+            dan berkarakter. Fokus pada video editing, motion graphics,
+            dan desain grafis untuk berbagai kebutuhan konten.
+          </p>
+
+          <div class="hero-actions" data-reveal="up" data-reveal-delay="260">
+            <a href="#projects" class="btn btn-solid">Lihat Portofolio <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            <a href="#about" class="btn btn-line-red">Tentang Saya</a>
+          </div>
+
+          <div class="hero-socials" data-reveal="up" data-reveal-delay="320">
+            <a href="https://instagram.com/raka_cihuyyy" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+            <a href="https://tiktok.com/@raka_cihuyy" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="TikTok"><i class="fa-brands fa-tiktok" aria-hidden="true"></i></a>
+            <a href="https://sociabuzz.com/raka_cihuyyy" target="_blank" rel="noopener noreferrer" class="icon-btn" aria-label="Sociabuzz"><i class="fa-solid fa-hand-holding-dollar" aria-hidden="true"></i></a>
+          </div>
+        </div>
+
+        <div class="hero-stage" data-reveal="zoom" data-reveal-delay="200">
+          <div class="float-visual" id="float-visual" aria-hidden="true">
+            <span class="fv-glow"></span>
+            <span class="fv-ring fv-ring--1"></span>
+            <span class="fv-ring fv-ring--2"></span>
+            <span class="fv-ring fv-ring--3"></span>
+            <span class="fv-tick fv-tick--a"></span>
+            <span class="fv-tick fv-tick--b"></span>
+            <img class="fv-logo" src="logo.png" alt="" decoding="async">
+          </div>
+        </div>
+      </div>
+
+      <div class="wrap hero-foot">
+        <span class="micro">Portfolio — 2026</span>
+        <span class="micro">Bali, ID — <span class="tnum" id="wita-clock">--:--</span> WITA</span>
+        <span class="micro red"><i class="rec-dot-inline"></i> Recording stories</span>
+      </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee" aria-hidden="true">
+      <span class="marquee-edge marquee-edge--l"></span>
+      <span class="marquee-edge marquee-edge--r"></span>
+      <div class="marquee-track" id="marquee-track">
+        <span>Design Grafis</span><i></i>
+        <span class="dim">Motion Graphics</span><i></i>
+        <span>Video Editing</span><i></i>
+        <span class="dim">Color Grading</span><i></i>
+        <span>Design Grafis</span><i></i>
+        <span class="dim">Motion Graphics</span><i></i>
+        <span>Video Editing</span><i></i>
+        <span class="dim">Color Grading</span><i></i>
+      </div>
+    </div>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="wrap">
+        <header class="sec-head" data-reveal="up"">
+          <div class="sec-meta">
+            <span class="sec-idx tnum">/ 01</span>
+            <i class="sec-line"></i>
+            <span class="micro">Tentang</span>
+          </div>
+          <h2 class="sec-title" data-split>Behind The <span class="red">Timeline</span></h2>
+        </header>
+
+        <div class="about-grid">
+          <div class="about-main">
+            <p class="lead" data-reveal="up">
+              Halo, aku <strong>Raka</strong> seorang Video Editor &amp; Motion Designer asal Bali dengan
+              pengalaman 2 Tahun, yang kini masih menempuh jenjang pendidikan SMK. Bagi saya, usia muda
+              bukan halangan untuk terus berksplorasi dan beradaptasi dengan tren visual terbaru.
+              Saya selalu antusias mempelajari software serta teknik baru agar setiap hasil karya
+              tidak hanya estetik, tetapi juga relevan dan mampu memberi dampak nyata bagi setiap klien.
+            </p>
+            <p class="body-text" data-reveal="up" data-reveal-delay="70">
+              Saya percaya editing yang baik bukan soal jumlah efek, melainkan ritme, warna, dan
+              struktur cerita. Setiap proyek dimulai dari riset referensi dan pemetaan beat, dilanjutkan
+              pemotongan presisi, lalu ditutup dengan color grading yang konsisten — supaya video Anda
+              tidak hanya ditonton, tapi diingat.
+            </p>
+
+            <div class="skills">
+              <div class="skill" data-reveal="up">
+                <div class="skill-top">
+                  <span class="skill-name"><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i> AlightMotion</span>
+                  <span class="skill-val tnum">95%</span>
+                </div>
+                <div class="skill-track"><i class="skill-fill" data-progress="95"></i></div>
+              </div>
+              <div class="skill" data-reveal="up" data-reveal-delay="70">
+                <div class="skill-top">
+                  <span class="skill-name"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i> Lightroom</span>
+                  <span class="skill-val tnum">90%</span>
+                </div>
+                <div class="skill-track"><i class="skill-fill" data-progress="90"></i></div>
+              </div>
+              <div class="skill" data-reveal="up" data-reveal-delay="140">
+                <div class="skill-top">
+                  <span class="skill-name"><i class="fa-solid fa-pen-nib" aria-hidden="true"></i> Canva</span>
+                  <span class="skill-val tnum">85%</span>
+                </div>
+                <div class="skill-track"><i class="skill-fill" data-progress="85"></i></div>
+              </div>
+              <div class="skill" data-reveal="up" data-reveal-delay="210">
+                <div class="skill-top">
+                  <span class="skill-name"><i class="fa-solid fa-clapperboard" aria-hidden="true"></i> CapCut</span>
+                  <span class="skill-val tnum">88%</span>
+                </div>
+                <div class="skill-track"><i class="skill-fill" data-progress="88"></i></div>
+              </div>
+            </div>
+
+            <ul class="tags" data-reveal="up">
+              <li>Color Grading</li><li>Motion Graphics</li>
+              <li>Desain Grafis</li><li>Video Editing</li>
+            </ul>
+          </div>
+
+          <aside class="about-side">
+            <span class="side-rail">Fig. 02 — Philosophy</span>
+
+            <figure class="quote" data-reveal="up">
+              <span class="q-idx tnum">/ 02</span>
+              <span class="quote-mark" aria-hidden="true">“</span>
+              <blockquote>
+                Editor video yang mengubah video mentah menjadi sebuah konten yang usable dan berpotensi menaikan engagement anda.
+              </blockquote>
+              <figcaption>— Raka</figcaption>
+            </figure>
+
+            <dl class="facts" data-reveal="up" data-reveal-delay="80">
+              <div><dt>Based in</dt><dd>Bali</dd></div>
+              <div><dt>Since</dt><dd>2025</dd></div>
+              <div><dt>Projects</dt><dd class="tnum">20+</dd></div>
+              <div><dt>Clients</dt><dd class="tnum">10+</dd></div>
+            </dl>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <div class="wrap">
+        <header class="sec-head" data-reveal="up"">
+          <div class="sec-meta">
+            <span class="sec-idx tnum">/ 02</span>
+            <i class="sec-line"></i>
+            <span class="micro">Portofolio</span>
+          </div>
+          <h2 class="sec-title" data-split>Video <span class="red">Mograph</span></h2>
+          <p class="sec-desc">Karya mograph pilihan — tekan Play untuk streaming.</p>
+        </header>
+
+        <svg class="icon-sprite" aria-hidden="true" focusable="false" width="0" height="0">
+          <symbol id="i-play" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></symbol>
+          <symbol id="i-pause" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16" rx="1"></rect><rect x="14" y="4" width="4" height="16" rx="1"></rect></symbol>
+          <symbol id="i-volume-x" viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4V5z"></path><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></symbol>
+          <symbol id="i-volume-2" viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></symbol>
+        </svg>
+
+        <div class="proj-grid" id="project-grid">
+
+          <article class="proj" data-reveal="up">
+            <div class="proj-thumb">
+              <video class="proj-video" loop playsinline muted preload="metadata"
+                     src="assets/video/Tbugs.Club 1st Drop.mp4"
+                     controlsList="nodownload" disablePictureInPicture
+                     oncontextmenu="return false;"
+                     aria-hidden="true" tabindex="-1"></video>
+              <span class="proj-fallback" aria-hidden="true"><b>Tbugs Club</b><i>Preview</i></span>
+              <button class="proj-play" type="button" tabindex="-1" aria-hidden="true" aria-label="Putar pratinjau"><i class="fa-solid fa-play" aria-hidden="true"></i></button>
+              <span class="proj-idx tnum" aria-hidden="true">01</span>
+              <span class="proj-live" aria-hidden="true"><i></i>Loop</span>
+              </div>
+            <div class="proj-info">
+              <h3>Tbugs Clubs</h3>
+              <div class="pi-meta"><span class="pi-dur tnum">00:21</span></div>
+              <div class="video-controls" role="group" aria-label="Kontrol video DKV SKENSA">
+                <button class="video-control video-play-toggle" type="button" aria-label="Play DKV SKENSA" aria-pressed="false">
+                  <svg class="video-control-icon" aria-hidden="true" focusable="false"><use href="#i-play"></use></svg>
+                  <span class="video-control-label">Play</span>
+                </button>
+                <button class="video-control video-sound-toggle" type="button" aria-label="Unmute DKV SKENSA" aria-pressed="true">
+                  <svg class="video-control-icon" aria-hidden="true" focusable="false"><use href="#i-volume-x"></use></svg>
+                  <span class="video-control-label">Unmute</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="proj tone-red" data-reveal="up" data-reveal-delay="70">
+            <div class="proj-thumb">
+              <video class="proj-video" loop playsinline muted preload="metadata"
+                     src="assets/video/hut.mp4"
+                     controlsList="nodownload" disablePictureInPicture
+                     oncontextmenu="return false;"
+                     aria-hidden="true" tabindex="-1"></video>
+              <span class="proj-fallback" aria-hidden="true"><b>HUT SMK NEGERI 1 DENPASAR</b><i>Preview</i></span>
+              <button class="proj-play" type="button" tabindex="-1" aria-hidden="true" aria-label="Putar pratinjau"><i class="fa-solid fa-play" aria-hidden="true"></i></button>
+              <span class="proj-idx tnum" aria-hidden="true">02</span>
+              <span class="proj-live" aria-hidden="true"><i></i>Loop</span>
+              </div>
+            <div class="proj-info">
+              <h3>HUT SMK NEGERI 1 DENPASAR</h3>
+              <div class="pi-meta"><span class="pi-dur tnum">00:45</span></div>
+              <div class="video-controls" role="group" aria-label="Kontrol video HUT SMK NEGERI 1 DENPASAR">
+                <button class="video-control video-play-toggle" type="button" aria-label="Play HUT SMK NEGERI 1 DENPASAR" aria-pressed="false">
+                  <svg class="video-control-icon" aria-hidden="true" focusable="false"><use href="#i-play"></use></svg>
+                  <span class="video-control-label">Play</span>
+                </button>
+                <button class="video-control video-sound-toggle" type="button" aria-label="Unmute HUT SMK NEGERI 1 DENPASAR" aria-pressed="true">
+                  <svg class="video-control-icon" aria-hidden="true" focusable="false"><use href="#i-volume-x"></use></svg>
+                  <span class="video-control-label">Unmute</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="proj" data-reveal="up">
+            <div class="proj-thumb">
+              <video class="proj-video" loop playsinline muted preload="metadata"
+                     src="assets/video/superpowers.mp4"
+                     controlsList="nodownload" disablePictureInPicture
+                     oncontextmenu="return false;"
+                     aria-hidden="true" tabindex="-1"></video>
+              <span class="proj-fallback" aria-hidden="true"><b>Super Powers</b><i>Preview</i></span>
+              <button class="proj-play" type="button" tabindex="-1" aria-hidden="true" aria-label="Putar pratinjau"><i class="fa-solid fa-play" aria-hidden="true"></i></button>
+              <span class="proj-idx tnum" aria-hidden="true">03</span>
+              <span class="proj-live" aria-hidden="true"><i></i>Loop</span>
+              </div>
+            <div class="proj-info">
+              <h3>Super Powers</h3>
+              <div class="pi-meta"><span class="pi-dur tnum">1:04</span></div>
+              <div class="video-controls" role="group" aria-label="Kontrol video Shinobi Rage">
+                <button class="video-control video-play-toggle" type="button" aria-label="Play Shinobi Rage" aria-pressed="false">
+                  <svg class="video-control-icon" aria-hidden="true" focusable="false"><use href="#i-play"></use></svg>
+                  <span class="video-control-label">Play</span>
+                </button>
+                <button class="video-control video-sound-toggle" type="button" aria-label="Unmute Shinobi Rage" aria-pressed="true">
+                  <svg class="video-control-icon" aria-hidden="true" focusable="false"><use href="#i-volume-x"></use></svg>
+                  <span class="video-control-label">Unmute</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="proj tone-red" data-reveal="up" data-reveal-delay="70">
+            <div class="proj-thumb">
+              <video class="proj-video" loop playsinline muted preload="metadata"
+                     src="assets/video/Nokia [CB2BE9F](1)(1).mp4"
+                     controlsList="nodownload" disablePictureInPicture
+                     oncontextmenu="return false;"
+                     aria-hidden="true" tabindex="-1"></video>
+              <span class="proj-fallback" aria-hidden="true"><b>Nokia</b><i>Preview</i></span>
+              <button class="proj-play" type="button" tabindex="-1" aria-hidden="true" aria-label="Putar pratinjau"><i class="fa-solid fa-play" aria-hidden="true"></i></button>
+              <span class="proj-idx tnum" aria-hidden="true">04</span>
+              <span class="proj-live" aria-hidden="true"><i></i>Loop</span>
+              </div>
+            <div class="proj-info">
+              <h3>Nokia</h3>
+              <div class="pi-meta"><span class="pi-dur tnum">00:18</span></div>
+              <div class="video-controls" role="group" aria-label="Kontrol video Bali Island">
+                <button class="video-control video-play-toggle" type="button" aria-label="Play Bali Island" aria-pressed="false">
+                  <svg class="video-control-icon" aria-hidden="true" focusable="false"><use href="#i-play"></use></svg>
+                  <span class="video-control-label">Play</span>
+                </button>
+                <button class="video-control video-sound-toggle" type="button" aria-label="Unmute Bali Island" aria-pressed="true">
+                  <svg class="video-control-icon" aria-hidden="true" focusable="false"><use href="#i-volume-x"></use></svg>
+                  <span class="video-control-label">Unmute</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="proj" data-reveal="up">
+            <div class="proj-thumb">
+              <video class="proj-video" loop playsinline muted preload="metadata"
+                     src="assets/video/peach.mp4"
+                     controlsList="nodownload" disablePictureInPicture
+                     oncontextmenu="return false;"
+                     aria-hidden="true" tabindex="-1"></video>
+              <span class="proj-fallback" aria-hidden="true"><b>Peach Eyes</b><i>Preview</i></span>
+              <button class="proj-play" type="button" tabindex="-1" aria-hidden="true" aria-label="Putar pratinjau"><i class="fa-solid fa-play" aria-hidden="true"></i></button>
+              <span class="proj-idx tnum" aria-hidden="true">05</span>
+              <span class="proj-live" aria-hidden="true"><i></i>Loop</span>
+              </div>
+            <div class="proj-info">
+              <h3>Peach Eyes</h3>
+              <div class="pi-meta"><span class="pi-dur tnum">00:20</span></div>
+              <div class="video-controls" role="group" aria-label="Kontrol video Free Fire Highlights #07">
+                <button class="video-control video-play-toggle" type="button" aria-label="Play Free Fire Highlights #07" aria-pressed="false">
+                  <svg class="video-control-icon" aria-hidden="true" focusable="false"><use href="#i-play"></use></svg>
+                  <span class="video-control-label">Play</span>
+                </button>
+                <button class="video-control video-sound-toggle" type="button" aria-label="Unmute Free Fire Highlights #07" aria-pressed="true">
+                  <svg class="video-control-icon" aria-hidden="true" focusable="false"><use href="#i-volume-x"></use></svg>
+                  <span class="video-control-label">Unmute</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="proj tone-red" data-reveal="up" data-reveal-delay="70">
+            <div class="proj-thumb">
+              <video class="proj-video" loop playsinline muted preload="metadata"
+                     src="assets/video/v4 Headshot - Ishowpeed DL _ 30 Copy [5F31046].mp4"
+                     controlsList="nodownload" disablePictureInPicture
+                     oncontextmenu="return false;"
+                     aria-hidden="true" tabindex="-1"></video>
+              <span class="proj-fallback" aria-hidden="true"><b>HEADSHOT ISHOWSPEED</b><i>Preview</i></span>
+              <button class="proj-play" type="button" tabindex="-1" aria-hidden="true" aria-label="Putar pratinjau"><i class="fa-solid fa-play" aria-hidden="true"></i></button>
+              <span class="proj-idx tnum" aria-hidden="true">06</span>
+              <span class="proj-live" aria-hidden="true"><i></i>Loop</span>
+              </div>
+            <div class="proj-info">
+              <h3>HEADSHOT ISHOWSPEED</h3>
+              <div class="pi-meta"><span class="pi-dur tnum">00:14</span></div>
+              <div class="video-controls" role="group" aria-label="Kontrol video Titan Attack">
+                <button class="video-control video-play-toggle" type="button" aria-label="Play Titan Attack" aria-pressed="false">
+                  <svg class="video-control-icon" aria-hidden="true" focusable="false"><use href="#i-play"></use></svg>
+                  <span class="video-control-label">Play</span>
+                </button>
+                <button class="video-control video-sound-toggle" type="button" aria-label="Unmute Titan Attack" aria-pressed="true">
+                  <svg class="video-control-icon" aria-hidden="true" focusable="false"><use href="#i-volume-x"></use></svg>
+                  <span class="video-control-label">Unmute</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <section id="designs" class="section works-section">
+      <div class="wrap">
+        <header class="sec-head" data-reveal="up" works-head">
+          <div class="sec-meta">
+            <span class="sec-idx tnum">/ 03</span>
+            <i class="sec-line"></i>
+            <span class="micro">Karya Desain</span>
+          </div>
+          <h2 class="sec-title sec-title--sentence">Beberapa <span class="red">Karya desain</span> saya sebagai projek pribadi</h2>
+          <p class="sec-desc">Karya desain pilihan saya — poster, branding.</p>
+        </header>
+
+        <div class="works-rail" id="works-rail" role="region" tabindex="0"
+             aria-label="Galeri karya desain — tekan panah kiri dan kanan untuk menggeser">
+          <div class="works-track" id="works-track">
+
+            <figure class="work-item">
+              <div class="work-frame">
+                <span class="ph-box" aria-hidden="true">
+                  <i class="fa-solid fa-layer-group"></i><b>01</b><em>assets/design/01.jpg</em>
+                </span>
+                <span class="work-zoom">
+                  <img loading="lazy" decoding="async" src="assets/design/01.png" alt="Poster konser Hujan Merah dengan tipografi tebal dan blok merah"
+                       loading="lazy" decoding="async" onerror="this.classList.add('is-missing')">
+                </span>
+              </div>
+              <figcaption class="work-cap">
+                <span class="work-num tnum">01</span>
+                <div class="work-cap-txt">
+                  <h3>BMW M4</h3>
+                  <span class="micro">BMW · 2026</span>
+                </div>
+              </figcaption>
+            </figure>
+
+            <figure class="work-item">
+              <div class="work-frame">
+                <span class="ph-box" aria-hidden="true">
+                  <i class="fa-solid fa-layer-group"></i><b>02</b><em>assets/design/02.jpg</em>
+                </span>
+                <span class="work-zoom">
+                  <img loading="lazy" decoding="async" src="assets/design/02.png" alt="Identitas visual kedai kopi Kopi Senja"
+                       loading="lazy" decoding="async" onerror="this.classList.add('is-missing')">
+                </span>
+              </div>
+              <figcaption class="work-cap">
+                <span class="work-num tnum">02</span>
+                <div class="work-cap-txt">
+                  <h3>Future Princess</h3>
+                  <span class="micro">Princess · 2026</span>
+                </div>
+              </figcaption>
+            </figure>
+
+            <figure class="work-item">
+              <div class="work-frame">
+                <span class="ph-box" aria-hidden="true">
+                  <i class="fa-solid fa-layer-group"></i><b>03</b><em>assets/design/03.jpg</em>
+                </span>
+                <span class="work-zoom">
+                  <img loading="lazy" decoding="async" src="assets/design/03.png" alt="Thumbnail video Sinyal Malam dengan kontras tinggi"
+                       loading="lazy" decoding="async" onerror="this.classList.add('is-missing')">
+                </span>
+              </div>
+              <figcaption class="work-cap">
+                <span class="work-num tnum">03</span>
+                <div class="work-cap-txt">
+                  <h3>Natal</h3>
+                  <span class="micro">Poster Natal · 2026</span>
+                </div>
+              </figcaption>
+            </figure>
+
+            <figure class="work-item">
+              <div class="work-frame">
+                <span class="ph-box" aria-hidden="true">
+                  <i class="fa-solid fa-layer-group"></i><b>04</b><em>assets/design/04.jpg</em>
+                </span>
+                <span class="work-zoom">
+                  <img loading="lazy" decoding="async" src="assets/design/04.png" alt="Desain kemasan Arunika Teh dengan label simetris"
+                       loading="lazy" decoding="async" onerror="this.classList.add('is-missing')">
+                </span>
+              </div>
+              <figcaption class="work-cap">
+                <span class="work-num tnum">04</span>
+                <div class="work-cap-txt">
+                  <h3>Batman</h3>
+                  <span class="micro">Batman · 2025</span>
+                </div>
+              </figcaption>
+            </figure>
+
+            <figure class="work-item">
+              <div class="work-frame">
+                <span class="ph-box" aria-hidden="true">
+                  <i class="fa-solid fa-layer-group"></i><b>05</b><em>assets/design/05.jpg</em>
+                </span>
+                <span class="work-zoom">
+                  <img loading="lazy" decoding="async" src="assets/design/05.png" alt="Eksperimen tipografi Grid Sembilan"
+                       loading="lazy" decoding="async" onerror="this.classList.add('is-missing')">
+                </span>
+              </div>
+              <figcaption class="work-cap">
+                <span class="work-num tnum">05</span>
+                <div class="work-cap-txt">
+                  <h3>Ayam Bakar</h3>
+                  <span class="micro">Ayam Bakar · 2026</span>
+                </div>
+              </figcaption>
+            </figure>
+
+            <figure class="work-item">
+              <div class="work-frame">
+                <span class="ph-box" aria-hidden="true">
+                  <i class="fa-solid fa-layer-group"></i><b>06</b><em>assets/design/06.jpg</em>
+                </span>
+                <span class="work-zoom">
+                  <img loading="lazy" decoding="async" src="assets/design/06.png" alt="Antarmuka dashboard Ruang Pantau dengan tema gelap"
+                       loading="lazy" decoding="async" onerror="this.classList.add('is-missing')">
+                </span>
+              </div>
+              <figcaption class="work-cap">
+                <span class="work-num tnum">06</span>
+                <div class="work-cap-txt">
+                  <h3>Tan Malaka</h3>
+                  <span class="micro">Pahlawan · 2026</span>
+                </div>
+              </figcaption>
+            </figure>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing" class="section">
+      <div class="wrap">
+        <header class="sec-head" data-reveal="up"">
+          <div class="sec-meta">
+            <span class="sec-idx tnum">/ 04</span>
+            <i class="sec-line"></i>
+            <span class="micro">Pricing</span>
+          </div>
+          <h2 class="sec-title" data-split>Daftar <span class="deep-red">Harga</span></h2>
+          <p class="sec-desc">Pilih paket yang sesuai dengan kebutuhan Anda. Semua paket sudah termasuk revisi gratis.</p>
+        </header>
+
+        <div class="price-grid">
+
+          <div class="price-cat" data-reveal="up">
+            <span class="price-cat-idx">Kategori 01</span>
+            <h3 class="price-cat-title">Paket Desain Grafis</h3>
+            <i class="price-cat-line" aria-hidden="true"></i>
+            <span class="micro">Design Graphics</span>
+          </div>
+
+          <article class="price-card pc-wide" data-reveal="up">
+            <h4 class="pc-title">Paket Desain Grafis</h4>
+            <p class="pc-price">
+              <span class="pc-from">Mulai dari</span>
+              <span class="pc-amount">Rp. 30.000</span>
+            </p>
+            <ul class="pc-feat">
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i><span>Konten Feed / Story Social Media - Rp. 30.000</span></li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i><span>PPT Canva - Rp. 10.000 per slide</span></li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i><span>Banner / Spanduk / Poster Print - Rp. 40.000</span></li>
+            </ul>
+            <p class="pc-note"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> Semua paket Free Revisi</p>
+            <a class="btn btn-solid pc-cta" href="https://wa.me/6281999898009?text=Halo%20Raka,%20saya%20tertarik%20dengan%20paket%20Desain%20Grafis" target="_blank" rel="noopener noreferrer">Pesan Sekarang</a>
+          </article>
+
+          <div class="price-cat" data-reveal="up">
+            <span class="price-cat-idx">Kategori 02</span>
+            <h3 class="price-cat-title">Paket Motion Graphics</h3>
+            <i class="price-cat-line" aria-hidden="true"></i>
+            <span class="micro">Motion Graphics</span>
+          </div>
+
+          <article class="price-card" data-reveal="up">
+            <h4 class="pc-title">Basic</h4>
+            <p class="pc-price"><span class="pc-amount">Rp. 80.000</span></p>
+            <ul class="pc-feat">
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i><span>Durasi maks 15 detik</span></li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i><span>Free Revisi</span></li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i><span>Ada backsound</span></li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i><span>Simple animation</span></li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i><span>Format FHD MP4</span></li>
+            </ul>
+            <a class="btn btn-line-red pc-cta" href="https://wa.me/6281999898009?text=Halo%20Raka,%20saya%20tertarik%20dengan%20paket%20Basic%20Motion%20Graphics" target="_blank" rel="noopener noreferrer">Pesan Sekarang</a>
+          </article>
+
+          <article class="price-card" data-reveal="up">
+            <span class="pc-badge">Best Seller</span>
+            <h4 class="pc-title">Standard</h4>
+            <p class="pc-price">
+              <span class="pc-amount">Rp. 130.000</span>
+              <span class="pc-alt">/ $25 (Global)</span>
+            </p>
+            <ul class="pc-feat">
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i><span>Durasi maks 40 detik</span></li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i><span>Ada sound effect</span></li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i><span>Free Revisi</span></li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i><span>Ada backsound</span></li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i><span>Medium animation</span></li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i><span>Format FHD MP4/MOV</span></li>
+            </ul>
+            <a class="btn btn-solid pc-cta" href="https://wa.me/6281999898009?text=Halo%20Raka,%20saya%20tertarik%20dengan%20paket%20Standard%20Motion%20Graphics" target="_blank" rel="noopener noreferrer">Pesan Sekarang</a>
+          </article>
+
+          <article class="price-card pc-premium" data-reveal="up">
+            <h4 class="pc-title">Premium</h4>
+            <p class="pc-price">
+              <span class="pc-amount">Rp. 195.000</span>
+              <span class="pc-alt">/ $35 (Global)</span>
+            </p>
+            <ul class="pc-feat">
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i><span>Durasi maks 1 menit</span></li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i><span>Sound effect premium</span></li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i><span>Free Revisi</span></li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i><span>Ada backsound</span></li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i><span>Advanced animation</span></li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i><span>Format FHD MP4/MOV</span></li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i><span>Custom FPS</span></li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i><span>Mendapatkan project file (5MB &amp; XML)</span></li>
+            </ul>
+            <a class="btn btn-line-red pc-cta" href="https://wa.me/6281999898009?text=Halo%20Raka,%20saya%20tertarik%20dengan%20paket%20Premium%20Motion%20Graphics" target="_blank" rel="noopener noreferrer">Pesan Sekarang</a>
+          </article>
+
+          <div class="price-cat" data-reveal="up">
+            <span class="price-cat-idx">Kategori 03</span>
+            <h3 class="price-cat-title">Paket Video Editing</h3>
+            <i class="price-cat-line" aria-hidden="true"></i>
+            <span class="micro">Video Editing</span>
+          </div>
+
+          <article class="price-card" data-reveal="up">
+            <h4 class="pc-title">Short / TikTok / Reels</h4>
+            <p class="pc-price"><span class="pc-amount">Rp. 30.000</span></p>
+            <ul class="pc-feat">
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i><span>Durasi: 60 detik</span></li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i><span>Free Revisi</span></li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i><span>Rasio: All Ratio</span></li>
+            </ul>
+            <a class="btn btn-solid pc-cta" href="https://wa.me/6281999898009?text=Halo%20Raka,%20saya%20tertarik%20dengan%20paket%20Short%20/%20TikTok%20/%20Reels" target="_blank" rel="noopener noreferrer">Pesan Sekarang</a>
+          </article>
+
+          <article class="price-card pc-long" data-reveal="up">
+            <h4 class="pc-title">Long Video</h4>
+            <p class="pc-price">
+              <span class="pc-amount">Rp. 35.000</span>
+              <span class="pc-alt">/ per menit</span>
+            </p>
+            <ul class="pc-feat">
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i><span>Free Revisi</span></li>
+              <li><i class="fa-solid fa-check" aria-hidden="true"></i><span>Rasio: All Ratio</span></li>
+            </ul>
+            <a class="btn btn-line-red pc-cta" href="https://wa.me/6281999898009?text=Halo%20Raka,%20saya%20tertarik%20dengan%20paket%20Long%20Video" target="_blank" rel="noopener noreferrer">Pesan Sekarang</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="wrap">
+        <header class="sec-head" data-reveal="up"">
+          <div class="sec-meta">
+            <span class="sec-idx tnum">/ 05</span>
+            <i class="sec-line"></i>
+            <span class="micro">Kontak</span>
+          </div>
+        </header>
+
+        <div class="contact-grid">
+          <div class="contact-left">
+            <h2 class="contact-title" data-reveal="up" data-split>
+              Let's Create<br /><span class="red">Something Great</span>
+            </h2>
+            <div class="accent-line" data-reveal="up" data-reveal-delay="70" aria-hidden="true"></div>
+            <p class="body-text" data-reveal="up" data-reveal-delay="90" style="margin-top:0; max-width:52ch">
+              Punya ide video, atau channel yang butuh editor tetap? atau proyek sekali jadi?
+              Kirim pesan dan tunggu balasan dari saya
+            </p>
+
+            <ul class="contact-list" data-reveal="up" data-reveal-delay="120">
+              <li>
+                <a class="c-item" href="mailto:yagazgaming@gmail.com" target="_blank" rel="noopener noreferrer">
+                  <span class="c-icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></span>
+                  <span class="c-body">
+                    <span class="c-label">Email</span>
+                    <span class="c-value" data-social-text="email">yagazgaming@gmail.com</span>
+                  </span>
+                  <i class="c-arrow fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li>
+                <a class="c-item" href="https://wa.me/6281999898009" target="_blank" rel="noopener noreferrer">
+                  <span class="c-icon"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></span>
+                  <span class="c-body">
+                    <span class="c-label">WhatsApp</span>
+                    <span class="c-value" data-social-text="whatsapp">+62 819-9989-8009</span>
+                  </span>
+                  <i class="c-arrow fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li>
+                <a class="c-item" href="https://maps.google.com/?q=Bali,Indonesia" target="_blank" rel="noopener noreferrer">
+                  <span class="c-icon"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></span>
+                  <span class="c-body">
+                    <span class="c-label">Lokasi</span>
+                    <span class="c-value">Bali, Indonesia</span>
+                  </span>
+                  <i class="c-arrow fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="contact-hub" data-reveal="up" data-reveal-delay="80">
+            <h3 class="hub-title">Hubungi Saya</h3>
+            <p class="hub-sub">Pilih cara tercepat untuk menghubungi saya:</p>
+
+            <ul class="hub-list">
+              <li>
+                <a class="hub-item" href="https://wa.me/6281999898009?text=Halo%20Raka." target="_blank" rel="noopener noreferrer">
+                  <span class="hub-icon"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></span>
+                  <span class="hub-body">
+                    <span class="hub-name">WhatsApp <span class="hub-tag">Fast Response</span></span>
+                    <span class="hub-val">+62 819-9989-8009</span>
+                  </span>
+                  <i class="hub-arrow fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                </a>
+              </li>
+
+              <li>
+                <a class="hub-item" href="mailto:yagazgaming@gmail.com">
+                  <span class="hub-icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></span>
+                  <span class="hub-body">
+                    <span class="hub-name">Email</span>
+                    <span class="hub-val">yagazgaming@gmail.com</span>
+                  </span>
+                  <i class="hub-arrow fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                </a>
+              </li>
+
+              <li>
+                <a class="hub-item" href="https://instagram.com/raka_cihuyyy" target="_blank" rel="noopener noreferrer">
+                  <span class="hub-icon"><i class="fa-brands fa-instagram" aria-hidden="true"></i></span>
+                  <span class="hub-body">
+                    <span class="hub-name">Instagram DM</span>
+                    <span class="hub-val" data-social-text="instagram">@raka_cihuyyy</span>
+                  </span>
+                  <i class="hub-arrow fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                </a>
+              </li>
+
+              <li>
+                <a class="hub-item" href="https://sociabuzz.com/raka_cihuyyy" target="_blank" rel="noopener noreferrer">
+                  <span class="hub-icon"><i class="fa-solid fa-hand-holding-dollar" aria-hidden="true"></i></span>
+                  <span class="hub-body">
+                    <span class="hub-name">Sociabuzz</span>
+                    <span class="hub-val">Dukung karya saya di sini</span>
+                  </span>
+                  <i class="hub-arrow fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="f-grid">
+
+        <!-- Kolom 1: ajakan kontak -->
+        <div class="f-cta">
+          <p class="f-eyebrow"><span class="rec-dot-inline" aria-hidden="true"></span> Terbuka untuk proyek baru</p>
+          <h2 class="f-head">Punya footage?<br>Ceritakan aja.</h2>
+          <a href="mailto:yagazgaming@gmail.com?subject=Proyek%20baru" class="f-mailbtn">
+            <span>yagazgaming@gmail.com</span>
+            <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
+          </a>
+        </div>
+
+        <!-- Kolom 2: navigasi -->
+        <nav class="f-col" aria-label="Navigasi footer">
+          <h3 class="f-col-lbl">Halaman</h3>
+          <ul class="f-nav">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#designs">Designs</a></li>
+            <li><a href="#pricing">Price</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <!-- Kolom 3: sosmed -->
+        <div class="f-col f-col--sosmed">
+          <h3 class="f-col-lbl">Temukan saya</h3>
+          <ul class="f-socials">
+            <li><a href="https://instagram.com/raka_cihuyyy" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram" aria-hidden="true"></i><span>Instagram</span></a></li>
+            <li><a href="https://tiktok.com/@raka_cihuyy" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-tiktok" aria-hidden="true"></i><span>TikTok</span></a></li>
+            <li><a href="https://sociabuzz.com/raka_cihuyyy" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-hand-holding-dollar" aria-hidden="true"></i><span>Sociabuzz</span></a></li>
+            <li><a href="https://wa.me/6281999898009" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i><span>WhatsApp</span></a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Baris dasar: wordmark + jam, satu baris rata -->
+      <div class="f-base">
+        <span class="f-mark" aria-hidden="true">RAKA.</span>
+        <span class="f-clock">
+          <span class="f-clock-val" id="f-clock" aria-live="off">--:--</span>
+          <span class="f-clock-lbl">WITA &middot; Bali</span>
+        </span>
+      </div>
+    </footer>
+  </div>
+
+
+  <button id="to-top" class="to-top" type="button" aria-label="Kembali ke atas">
+    <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+    <span class="to-top-ring" aria-hidden="true"></span>
+  </button>
+
+  <div id="toast" role="status" aria-live="polite">
+    <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+    <span id="toast-text">Berhasil.</span>
+  </div>
+
+  <script>
+  (function () {
+    'use strict';
+
+/* ===== SOCIAL — sumber kebenaran semua link sosial ===== */
+    const SOCIAL = {
+      instagram: 'raka_cihuyyy',   // tanpa "@"
+      tiktok:    'raka_cihuyy',    // dengan "@"
+      sociabuzz: 'raka_cihuyyy',   // tanpa "@"
+      whatsapp:  '6281999898009',  // format internasional, tanpa "+" / spasi
+      email:     'yagazgaming@gmail.com'
+    };
+
+    /* "6281999898009" -> "+62 819-9989-8009" (untuk teks tampilan saja) */
+    function formatWaDisplay(num) {
+      let d = String(num).replace(/\D/g, '');
+      if (d.indexOf('62') === 0) d = d.slice(2);
+      return '+62 ' + d.replace(/^(\d{3})(\d{4})(\d{0,4}).*$/, '$1-$2-$3');
+    }
+
+    /* Bangun URL final yang formatnya benar. */
+    const SOCIAL_URL = {
+      get instagram() { return 'https://instagram.com/' + SOCIAL.instagram; },
+      get tiktok()    { return 'https://tiktok.com/@' + SOCIAL.tiktok; },
+      get sociabuzz() { return 'https://sociabuzz.com/' + SOCIAL.sociabuzz; },
+      get email()     { return 'mailto:' + SOCIAL.email; },
+      whatsapp: (text) => 'https://wa.me/' + SOCIAL.whatsapp
+        + (text ? '?text=' + encodeURIComponent(text) : '')
+    };
+
+/* Platform dideteksi dari href, bukan dari class. */
+    function detectPlatform(href) {
+      const h = (href || '').toLowerCase();
+      if (h.startsWith('mailto:') || h.includes('@gmail.com') || h.includes('@email.com')) return 'email';
+      if (h.includes('instagram.com')) return 'instagram';
+      if (h.includes('tiktok.com')) return 'tiktok';
+      if (h.includes('sociabuzz.com')) return 'sociabuzz';
+      if (h.includes('wa.me') || h.includes('whatsapp.com') || h.includes('api.whatsapp')) return 'whatsapp';
+      return null;
+    }
+
+/* Terapkan SOCIAL ke semua href sosial (aman dipanggil berulang). */
+    function syncSocialLinks() {
+      let fixed = 0;
+
+      $$('a[href]').forEach((a) => {
+        const platform = detectPlatform(a.getAttribute('href'));
+        if (!platform) return;
+
+        let next = SOCIAL_URL[platform];
+        if (typeof next !== 'string') return; // whatsapp butuh argumen teks
+
+        if (platform === 'whatsapp') {
+          // Pertahankan pesan yang sudah ada, ganti nomor + format ulang.
+          const old = a.getAttribute('href');
+          const m = (old || '').match(/[?&]text=([^&]*)/);
+          next = SOCIAL_URL.whatsapp(m ? decodeURIComponent(m[1]) : '');
+        }
+
+        if (a.getAttribute('href') !== next) {
+          a.setAttribute('href', next);
+          fixed++;
+        }
+
+        // mailto tidak butuh target/rel.
+        if (platform === 'email') {
+          a.removeAttribute('target');
+        } else {
+          a.setAttribute('target', '_blank');
+          a.setAttribute('rel', 'noopener noreferrer');
+        }
+      });
+
+      return fixed;
+    }
+
+    const $  = (sel, ctx = document) => ctx.querySelector(sel);
+    const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Hemat GPU: jeda animasi glow + grain saat tab tidak aktif
+    document.addEventListener('visibilitychange', () => {
+      const state = document.hidden ? 'paused' : 'running';
+      document.body.style.setProperty('--anim-state', state);
+    });
+
+
+    const toTop = $('#to-top');
+    if (toTop) {
+      toTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: reduced ? 'auto' : 'smooth' });
+      });
+    }
+
+/* MODE RINGAN — dipicu prefers-reduced-motion, RAM/inti sedikit,
+   pointer kasar, atau koneksi lambat. Hanya efek kosmetik yang dimatikan;
+   layout, warna, konten, dan interaksi tetap utuh. */
+    (function liteMode() {
+      const cores = navigator.hardwareConcurrency || 0;
+      const ram = navigator.deviceMemory || 0;          // 0 = tidak didukung
+      const coarse = window.matchMedia('(pointer: coarse)').matches;
+      const saveData = navigator.connection
+        && (navigator.connection.saveData === true
+            || /^(slow-2g|2g|3g)$/.test(navigator.connection.effectiveType || ''));
+
+      const weak = (ram > 0 && ram <= 2) || (cores > 0 && cores <= 2);
+      // Save-Data: user secara eksplisit minta hemat data — hormati.
+      const lite = reduced || weak || saveData;
+
+      if (lite) document.body.classList.add('lite');
+      if (coarse) document.body.classList.add('touch');
+    })();
+
+    const toastEl = $('#toast');
+    const toastText = $('#toast-text');
+    let toastTimer;
+    function showToast(message, icon) {
+      toastText.textContent = message;
+      toastEl.querySelector('i').className = 'fa-solid ' + (icon || 'fa-circle-check');
+      toastEl.classList.add('show');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toastEl.classList.remove('show'), 3200);
+    }
+
+/* FOOTER: jam WITA (UTC+8 tanpa DST), dihitung dari offset lokal saja.
+   Harus sama dengan #wita-clock di blok 2.7. */
+    (function initFooterClock() {
+      const clock = $('#f-clock');
+      if (!clock) return;
+
+      const render = () => {
+        const wita = new Date(Date.now() + (8 * 60 + new Date().getTimezoneOffset()) * 60000);
+        clock.textContent =
+          String(wita.getHours()).padStart(2, '0') + ':' +
+          String(wita.getMinutes()).padStart(2, '0');
+      };
+      render();
+      setInterval(render, 30000);
+    })();
+
+
+/* ===== MESIN ANIMASI: reveal, split-text, magnet ===== */
+
+    /* --- 2.2 Reveal on scroll (IntersectionObserver) --- */
+    const revealIO = new IntersectionObserver((entries, obs) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        const el = e.target;
+        el.classList.add('is-in');
+        // Lepas will-change: layer GPU tidak perlu lagi setelah reveal.
+        el.classList.remove('rv-armed');
+        obs.unobserve(el);
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+
+    $$('[data-reveal]').forEach((el) => {
+      const d = el.getAttribute('data-reveal-delay');
+      if (d) el.style.setProperty('--rv-delay', d + 'ms');
+      if (reduced) { el.classList.add('is-in'); return; }
+      el.classList.add('rv-armed');
+      revealIO.observe(el);
+    });
+
+    /* --- 2.1 Split text: pecah judul jadi <span class="ch"> --- */
+    function splitText(el) {
+      if (!el || el.dataset.split === 'done') return;
+      el.dataset.split = 'done';
+      let i = 0;
+      // Pecah TEKS di dalam pembungkus yang relevan (.line-in, .red, .deep-red).
+      // Elemen lain dilewati supaya struktur markup tetap utuh.
+      const inner = el.querySelectorAll('.line-in, .red, .deep-red');
+      const hosts = inner.length ? Array.from(inner) : [el];
+
+      hosts.forEach((host) => {
+        Array.from(host.childNodes).forEach((k) => {
+          if (k.nodeType !== 3) return;
+          const txt = k.textContent;
+          if (!txt) return;
+          const frag = document.createDocumentFragment();
+          Array.from(txt).forEach((ch) => {
+            if (ch === ' ' || ch === '\u00a0') { frag.appendChild(document.createTextNode(' ')); return; }
+            const span = document.createElement('span');
+            span.className = 'ch';
+            span.style.setProperty('--i', i++);
+            span.textContent = ch;
+            frag.appendChild(span);
+          });
+          host.replaceChild(frag, k);
+        });
+      });
+    }
+    $$('[data-split]').forEach(splitText);
+
+    // Judul ber-split juga diamati reveal agar state .is-in menempel pada
+    // elemen induknya (CSS memakai [data-split].is-in .ch).
+    $$('[data-split]').forEach((el) => revealIO.observe(el));
+    $$('[data-split]').forEach((el) => {
+      if (reduced) el.classList.add('is-in');
+    });
+
+/* 2.3 Counter — DIHAPUS. Strip statistik sudah hilang dari markup,
+   jadi [data-count] tidak ada lagi; animateCount() + count ikut dibuang. */
+
+    /* --- 2.4 Preloader --- */
+    (function preloader() {
+      const pre = $('#preloader');
+      if (!pre) return;
+      const fill = $('#pl-fill');
+      const count = $('#pl-count');
+      const done = () => {
+        document.body.classList.remove('is-loading');
+        pre.classList.add('is-done');
+        document.documentElement.classList.add('is-ready');
+        setTimeout(() => { if (pre.parentNode) pre.parentNode.removeChild(pre); }, 1000);
+      };
+      if (reduced) { done(); return; }
+
+      let pct = 0;
+      const tick = () => {
+        pct = Math.min(100, pct + Math.random() * 16 + 6);
+        if (fill) fill.style.width = pct + '%';
+        // Cermin progress ke .pl-bar::after supaya glow tidak ter-clip
+        // oleh overflow:hidden milik .pl-bar.
+        if (fill) fill.parentNode.style.setProperty('--pl-progress', pct + '%');
+        if (count) count.textContent = ('0' + Math.round(pct)).slice(-2);
+      };
+      const iv = setInterval(tick, 90);
+      setTimeout(() => { clearInterval(iv); tick(); }, 120);
+
+      // Jangan pernah menjebak user: selesaikan maksimal 1.6 detik.
+      setTimeout(() => { clearInterval(iv); done(); }, 1600);
+      window.addEventListener('load', () => {
+        setTimeout(() => { clearInterval(iv); done(); }, 220);
+      }, { once: true });
+    })();
+
+/* 2.5 Cursor kustom — DIHAPUS. rAF per mousemove + cursor:none
+   adalah sumber frame drop; sekarang cursor bawaan browser (nol frame). */
+
+    /* --- 2.6 Efek magnetik pada tombol --- */
+    (function magnetic() {
+      const fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+      if (!fine || reduced) return;
+      $$('.btn, .video-control, .icon-btn').forEach((el) => {
+        const strength = el.classList.contains('btn') ? 0.28 : 0.18;
+        el.addEventListener('mousemove', (e) => {
+          const r = el.getBoundingClientRect();
+          const dx = (e.clientX - r.left - r.width / 2) * strength;
+          const dy = (e.clientY - r.top - r.height / 2) * strength;
+          el.style.transform = 'translate(' + dx + 'px,' + dy + 'px)';
+        });
+        el.addEventListener('mouseleave', () => { el.style.transform = ''; });
+      });
+    })();
+
+/* 2.7 Jam WITA — tick 30 detik; jam ini hanya menampilkan menit. */
+    (function witaClock() {
+      const el = $('#wita-clock');
+      if (!el) return;
+      const tick = () => {
+        const now = new Date(Date.now() + (8 * 60) * 60000 + new Date().getTimezoneOffset() * 60000);
+        el.textContent =
+          ('0' + now.getHours()).slice(-2) + ':' + ('0' + now.getMinutes()).slice(-2);
+      };
+      tick();
+      setInterval(tick, 30000);
+    })();
+
+    /* --- 2.8 Parallax logo hero (pointer + scroll) --- */
+    (function heroParallax() {
+      const stage = $('#float-visual');
+      if (!stage) return;
+      const fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+      if (fine && !reduced) {
+        const MAX = 7;   // derajat — miring tipis, bukan menoleh
+        let raf = 0, tx = 0, ty = 0, cx = 0, cy = 0;
+
+        const apply = () => {
+          raf = 0;
+          // Interpolasi halus:coursor cepat tidak bikin logo bergetar.
+          cx += (tx - cx) * 0.12;
+          cy += (ty - cy) * 0.12;
+          stage.style.setProperty('--px', cx.toFixed(2) + 'deg');
+          stage.style.setProperty('--py', cy.toFixed(2) + 'deg');
+          if (Math.abs(tx - cx) > 0.05 || Math.abs(ty - cy) > 0.05) raf = requestAnimationFrame(apply);
+        };
+        const queue = () => { if (!raf) raf = requestAnimationFrame(apply); };
+
+        window.addEventListener('mousemove', (e) => {
+          const r = stage.getBoundingClientRect();
+          if (r.bottom < 0 || r.top > window.innerHeight) return;
+          // Clamp -1..1: pointer di luar area tidak bolehektion membesar sudut.
+          const nx = Math.max(-1, Math.min(1, (e.clientX - (r.left + r.width / 2)) / (r.width / 2)));
+          const ny = Math.max(-1, Math.min(1, (e.clientY - (r.top + r.height / 2)) / (r.height / 2)));
+          tx = nx * MAX;
+          ty = -ny * MAX;
+          queue();
+        }, { passive: true });
+
+        // Kembali datar saat pointer pergi — tanpa ini logo "bekas miring".
+        document.addEventListener('mouseleave', () => { tx = 0; ty = 0; queue(); });
+      }
+    })();
+
+    const header = $('#site-header');
+    const progressBar = $('#scroll-bar');
+    const sections = $$('main section[id]');
+    const navLinks = $$('.nav-link, .mm-link');
+
+    const toTopBtn = $('#to-top');
+    const marqueeTrack = $('#marquee-track');
+    let scrollRaf = 0;
+
+    function onScroll() {
+      const y = window.scrollY;
+      header.classList.toggle('is-scrolled', y > 30);
+
+      const docH = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docH > 0 ? (y / docH) * 100 : 0;
+      progressBar.style.width = pct + '%';
+      if (toTopBtn) toTopBtn.classList.toggle('is-show', y > 620);
+
+      // will-change untuk marquee hanya saat benar-benar terlihat —
+      // track-nya selebar max-content, jadi promoted terus-menerus
+      // akan menahan layer besar di RAM.
+      if (marqueeTrack) {
+        const onScreen = y > marqueeTrack.offsetTop - window.innerHeight
+                      && y < marqueeTrack.offsetTop + window.innerHeight;
+        marqueeTrack.classList.toggle('is-live', onScreen);
+      }
+
+/* Reaksi scroll pada marquee DIHAPUS. --skew diisi per frame dari delta
+   scroll, jadi marquee bergoyang dan glyph shimmer. Loop kini murni CSS. */
+
+      let current = 'home';
+      sections.forEach((sec) => { if (y >= sec.offsetTop - 200) current = sec.id; });
+      navLinks.forEach((a) => a.classList.toggle('is-active', a.getAttribute('href') === '#' + current));
+    }
+    // Scroll diproses maksimal 1x per frame. Tanpa ini, setiap event
+    // scroll (yang bisa 60-120x/detik di HP) langsung memicu
+    // getBoundingClientRect + class toggle tanpa henti.
+    window.addEventListener('scroll', () => {
+      if (scrollRaf) return;
+      scrollRaf = requestAnimationFrame(() => { scrollRaf = 0; onScroll(); });
+    }, { passive: true });
+    window.addEventListener('resize', onScroll);
+    onScroll();
+
+    const menuBtn = $('#menu-btn');
+    const menuClose = $('#mm-close');
+    const mobileMenu = $('#mobile-menu');
+
+    function openMenu() {
+      menuBtn.classList.add('is-open');
+      menuBtn.setAttribute('aria-expanded', 'true');
+      mobileMenu.classList.add('is-open');
+      mobileMenu.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      setTimeout(() => menuClose.focus(), 150);
+    }
+    function closeMenu() {
+      menuBtn.classList.remove('is-open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      mobileMenu.classList.remove('is-open');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.contains('is-open') ? closeMenu() : openMenu();
+    });
+    menuClose.addEventListener('click', closeMenu);
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 1024 && mobileMenu.classList.contains('is-open')) closeMenu();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('is-open')) closeMenu();
+    });
+
+    $$('a[href^="#"]').forEach((link) => {
+      link.addEventListener('click', (e) => {
+        const id = link.getAttribute('href');
+        if (!id || id === '#') { e.preventDefault(); return; }
+        const target = document.querySelector(id);
+        if (!target) return;
+
+        e.preventDefault();
+        closeMenu();
+
+        const top = target.getBoundingClientRect().top + window.scrollY - header.offsetHeight - 8;
+        window.scrollTo({ top, behavior: reduced ? 'auto' : 'smooth' });
+/* Hash SENGAJA tidak ditulis ke URL: history.replaceState membuat
+   hard-refresh meloncat ke section. Untuk portofolio satu halaman, rare. */
+        // history.replaceState(...) dihapus — lihat catatan di atas.
+      });
+    });
+
+/* Pengaman scroll: paksa ke 0 setelah layout selesai, karena gambar
+   lazy-load, video, dan font menambah tinggi halaman SETELAH <head> jalan. */
+    (function forceTopAfterLayout() {
+      const toTop = () => {
+        try { window.scrollTo({ top: 0, left: 0, behavior: 'instant' }); }
+        catch (err) { window.scrollTo(0, 0); }
+      };
+
+      toTop();
+      requestAnimationFrame(toTop);
+      window.addEventListener('load', toTop);
+      // Setelah load masih bisa menambah tinggi (gambar lazy).
+      setTimeout(toTop, 400);
+    })();
+
+    (function typingLoop() {
+      const out = document.getElementById('typing-text');
+      if (!out) return;
+
+      const roles = [
+        'Visual Editor',
+        'Motion Designer',
+        'Motion Graphics',
+        'Desain Grafis',
+        'Video Editing',
+      ];
+      const TYPE_MS = 90;
+      const HOLD_MS = 1800;
+      const ERASE_MS = 45;
+
+      if (reduced) { out.textContent = roles[0]; return; }
+
+      let word = 0;
+      let charIdx = roles[0].length;
+      let erasing = false;
+      let timer = null;
+
+      function render() {
+        out.textContent = roles[word].slice(0, Math.max(1, charIdx));
+      }
+
+      function step() {
+        const current = roles[word];
+
+        if (!erasing) {
+          if (charIdx < current.length) {
+            charIdx += 1;
+            render();
+            timer = setTimeout(step, TYPE_MS);
+            return;
+          }
+          erasing = true;
+          timer = setTimeout(step, HOLD_MS);
+          return;
+        }
+
+        if (charIdx > 1) {
+          charIdx -= 1;
+          render();
+          timer = setTimeout(step, ERASE_MS);
+          return;
+        }
+
+        erasing = false;
+        word = (word + 1) % roles.length;
+        charIdx = 1;
+        render();
+        timer = setTimeout(step, TYPE_MS);
+      }
+
+      render();
+      timer = setTimeout(step, HOLD_MS);
+
+      document.addEventListener('visibilitychange', () => {
+        clearTimeout(timer);
+        if (!document.hidden) timer = setTimeout(step, HOLD_MS);
+      });
+    })();
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const pct = (el.dataset.progress || 0) + '%';
+        el.style.width = pct;
+        // Cerminkan ke .skill-track::after — glow-nya harus di elemen LUAR
+        // .skill-track, karena track-nya overflow:hidden dan akan memotong
+        // glow di dalam. Tanpa ini, glow hilang total.
+        const track = el.parentNode;
+        if (track) track.style.setProperty('--sk-progress', pct);
+        io.unobserve(el);
+      });
+    }, { threshold: 0.4 });
+    $$('.skill-fill').forEach((el) => io.observe(el));
+
+/* ===== GALERI DESAIN (my design portfolio) ===== */
+    const worksRail = $('#works-rail');
+    const worksTrack = $('#works-track');
+    let worksPeriod = 0;
+    let worksRaf = 0;
+    let worksVisible = false;
+    let worksSettled = false;
+    let worksPauseTimer = null;
+    let worksDragging = false;
+    let worksDragX = 0;
+    let worksDragLeft = 0;
+    let worksDragMoved = false;
+    let worksPx = [];
+    const worksReduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    function worksCloneLoop() {
+      if (!worksTrack) return;
+      $$('.work-item[data-clone]', worksTrack).forEach((n) => n.parentNode.removeChild(n));
+      $$('.work-item', worksTrack).forEach((item) => {
+        const clone = item.cloneNode(true);
+        clone.setAttribute('data-clone', '');
+        clone.setAttribute('aria-hidden', 'true');
+        worksTrack.appendChild(clone);
+      });
+      worksTrack.classList.add('is-live');
+      worksCollect();
+      worksMeasure();
+    }
+
+/* Tandai frame yang gambarnya sudah termuat agar .ph-box disembunyikan.
+   Dipanggil sebelum worksCloneLoop() supaya clone mewarisi has-img. */
+    function worksBindPlaceholder() {
+      if (!worksTrack) return;
+      $$('.work-item', worksTrack).forEach((item) => {
+        const frame = $('.work-frame', item);
+        const ph = frame ? $('.ph-box', frame) : null;
+        const img = frame ? $('img', frame) : null;
+        if (!ph || !img) return;
+        const mark = () => { if (!img.classList.contains('is-missing')) frame.classList.add('has-img'); };
+        if (img.complete && img.naturalWidth > 0) mark();
+        else img.addEventListener('load', mark, { once: true });
+      });
+    }
+
+    function worksCollect() {
+      worksPx = $$('.work-item', worksTrack).map((item) => {
+        const frame = $('.work-frame', item);
+        const zoom = $('.work-zoom', item);
+        const img = zoom ? $('img', zoom) : null;
+        return (frame && zoom && img) ? { frame: frame, zoom: zoom, img: img, cur: 0 } : null;
+      }).filter(Boolean);
+    }
+
+    function worksMeasure() {
+      if (!worksTrack || !worksRail) return;
+      const first = $('.work-item:not([data-clone])', worksTrack);
+      const firstClone = $('.work-item[data-clone]', worksTrack);
+      worksPeriod = (first && firstClone) ? (firstClone.offsetLeft - first.offsetLeft) : 0;
+      if (!(worksPeriod > 0)) worksPeriod = worksTrack.getBoundingClientRect().width / 2;
+      worksWrap();
+    }
+
+    function worksWrap() {
+      if (!worksRail || !(worksPeriod > 0)) return;
+      while (worksRail.scrollLeft >= worksPeriod) worksRail.scrollLeft -= worksPeriod;
+      if (worksRail.scrollLeft < 0) worksRail.scrollLeft = 0;
+    }
+
+    function worksPause(ms) {
+      if (!worksRail) return;
+      worksRail.classList.add('is-paused');
+      clearTimeout(worksPauseTimer);
+      worksPauseTimer = setTimeout(() => worksRail.classList.remove('is-paused'), ms || 1600);
+    }
+
+/* Parallax 1.2% dari lebar frame. Wajib <= 2%: .work-zoom img memakai
+   scale(1.02), jadi cushion cuma 1% per sisi. */
+    const WORKS_PARALLAX_MAX = 0.008;
+
+    function worksTick() {
+      worksRaf = 0;
+      if (!worksVisible || worksReduce.matches) return;
+      const rr = worksRail.getBoundingClientRect();
+
+      if (rr.width > 1) {
+        const center = rr.left + rr.width / 2;
+        // Demo build, tapi tetap di-_settle_ per item: begitu semua
+        // item sudah sampai di posisi akhirnya, loop berhenti. Loop
+        // parallax yang jalan 60fps selamanya padahal tidak ada
+        // yang bergerak adalah pemborosan CPU yang murni.
+        let moving = false;
+
+        for (let i = 0; i < worksPx.length; i++) {
+          const it = worksPx[i];
+          const fr = it.frame.getBoundingClientRect();
+          if (fr.right < rr.left - 160 || fr.left > rr.right + 160) continue;
+          let target = (fr.left + fr.width / 2 - center) * 0.008;
+          const max = fr.width * WORKS_PARALLAX_MAX;
+          if (target > max) target = max;
+          else if (target < -max) target = -max;
+          it.cur += (target - it.cur) * 0.16;
+          // Dekat target -> snap, lalu tandai diam.
+          if (Math.abs(target - it.cur) < 0.05) { it.cur = target; }
+          else { moving = true; }
+          // Set variabel CSS, JANGAN menulis style.transform di sini —
+          // .work-zoom adalah layer yang memotong, menggesernya membuka ruang kosong.
+          it.zoom.style.setProperty('--px', it.cur.toFixed(2) + 'px');
+        }
+
+        if (!moving) { worksSettled = true; return; }   // berhenti, tidak re-schedule
+      }
+      worksRaf = requestAnimationFrame(worksTick);
+    }
+    function worksStart() {
+      // worksSettled = semua item sudah di posisi akhir, jadi loop rAF
+      // sengaja dihentikan. Dipicu ulang oleh scroll/touch/resize/IO
+      // (semua memanggil worksStart lagi), jadi parallax tetap hidup
+      // saat memang ada yang bergerak.
+      worksSettled = false;
+      if (!worksRaf && !worksReduce.matches) worksRaf = requestAnimationFrame(worksTick);
+    }
+
+    function worksMove(e) {
+      if (!worksDragging) return;
+      const dx = e.clientX - worksDragX;
+      if (Math.abs(dx) > 3) worksDragMoved = true;
+      if (!worksDragMoved) return;
+      worksRail.scrollLeft = worksDragLeft - dx;
+      worksWrap();
+      worksPause();
+    }
+    function worksUp() {
+      worksDragging = false;
+      worksRail.classList.remove('is-dragging');
+      window.removeEventListener('pointermove', worksMove);
+      window.removeEventListener('pointerup', worksUp);
+      window.removeEventListener('pointercancel', worksUp);
+      setTimeout(() => { worksDragMoved = false; }, 0);
+    }
+
+    if (worksRail && worksTrack) {
+      worksRail.addEventListener('pointerdown', (e) => {
+        if (e.pointerType !== 'mouse' || e.button !== 0) return;
+        worksDragging = true;
+        worksDragMoved = false;
+        worksDragX = e.clientX;
+        worksDragLeft = worksRail.scrollLeft;
+        worksRail.classList.add('is-dragging');
+        window.addEventListener('pointermove', worksMove);
+        window.addEventListener('pointerup', worksUp);
+        window.addEventListener('pointercancel', worksUp);
+        worksPause();
+      });
+
+      worksRail.addEventListener('wheel', (e) => {
+        const d = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
+        if (!d) return;
+        worksRail.scrollLeft += d;
+      }, { passive: true });
+
+      worksRail.addEventListener('scroll', () => { worksWrap(); worksPause(); worksStart(); }, { passive: true });
+      worksRail.addEventListener('touchstart', () => { worksPause(); worksStart(); }, { passive: true });
+      worksRail.addEventListener('keydown', () => { worksPause(); worksStart(); });
+
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver((entries) => {
+          worksVisible = entries[0].isIntersecting;
+          if (worksVisible) worksStart();
+        }, { rootMargin: '150px' }).observe(worksRail);
+      } else {
+        worksVisible = true;
+        worksStart();
+      }
+
+      let worksResizeT = 0;
+      window.addEventListener('resize', () => {
+        clearTimeout(worksResizeT);
+        // Reset parallax: ukuran berubah = target semua item berubah.
+        worksSettled = false;
+        worksStart();
+        worksResizeT = setTimeout(() => { worksMeasure(); worksStart(); }, 160);
+      });
+      window.addEventListener('load', worksMeasure);
+
+      worksBindPlaceholder();
+      worksCloneLoop();
+      if (worksReduce.matches) worksTrack.classList.remove('is-live');
+    }
+
+    function protectMedia() {
+      $$('video').forEach((v) => {
+        v.setAttribute('controlsList', 'nodownload');
+        v.setAttribute('oncontextmenu', 'return false;');
+        v.addEventListener('contextmenu', (e) => e.preventDefault());
+      });
+
+      const ensureParams = (frame, pairs) => {
+        const base = frame.getAttribute('src') || '';
+        if (!base) return;
+        let src = base;
+        pairs.forEach(([key, val]) => {
+          if (!src.includes(key + '=')) src += (src.includes('?') ? '&' : '?') + key + '=' + val;
+        });
+        if (src !== base) frame.setAttribute('src', src);
+      };
+      $$('iframe').forEach((f) => {
+        const s = f.getAttribute('src') || '';
+        if (/youtube|youtu\.be/.test(s)) ensureParams(f, [['rel','0'],['modestbranding','1'],['showinfo','0'],['disablekb','1']]);
+        if (/vimeo/.test(s)) ensureParams(f, [['byline','0'],['portrait','0'],['title','0'],['download','0']]);
+      });
+    }
+    protectMedia();
+
+/* Metadata video diambil saat kartu mendekati viewport — 6 koneksi paralel
+   sekaligus boros bandwidth. Tanpa JS tetap preload="metadata". */
+    (function lazyVideoMeta() {
+      const vids = $$('video');
+      if (!vids.length) return;
+
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduceMotion) return;   // reduced motion = user tak mau gerak, biarkan default
+
+      // Tabrakan dengan preloader browser: kalau belum ada yang played
+      // dan network lambat, jangan sentuh sama sekali.
+      if (navigator.connection && (navigator.connection.saveData
+          || /^(slow-2g|2g)$/.test(navigator.connection.effectiveType || ''))) return;
+
+      vids.forEach((v) => { v.setAttribute('preload', 'none'); });
+
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const v = entry.target;
+          v.setAttribute('preload', 'metadata');
+          v.load();               // mulai ambil metadata sekarang
+          io.unobserve(v);
+        });
+      }, { rootMargin: '300px 0px' });   // mulai 300px sebelum masuk layar
+
+      vids.forEach((v) => io.observe(v));
+    })();
+
+    document.addEventListener('contextmenu', (e) => {
+      const media = e.target.closest && e.target.closest(
+        'img, video, iframe, .proj, .work-item'
+      );
+      if (media) e.preventDefault();
+    });
+
+/* Hanya video di dalam viewport yang boleh play; yang jauh dijeda
+   supaya bandwidth tidak terbuang. */
+    const gridVideos = $$('#project-grid .proj-video');
+
+    if ('IntersectionObserver' in window) {
+      // Simpan frame terakhir yang tampil, lalu pulihkan saat kembali
+      // masuk viewport. Tanpa ini, browser sering balik ke frame 0
+      // dan thumbnail terlihat polos/gelap.
+      const vidIO = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          const v = e.target;
+          if (e.isIntersecting) {
+            v.setAttribute('preload', 'metadata');
+            if (v.dataset.parked && !v.paused === false) {
+              try { v.currentTime = parseFloat(v.dataset.parked); } catch (err) {}
+            }
+            delete v.dataset.parked;
+          } else {
+            if (!v.paused) {
+              v.dataset.parked = String(v.currentTime);
+              v.pause();
+            }
+          }
+        });
+      }, { rootMargin: '200px' });
+      gridVideos.forEach((v) => vidIO.observe(v));
+    }
+
+    /* Rasio container ikut rasio asli video, supaya tidak ada yang
+       terpotong: 9:16 jadi kartu tinggi, 16:9 tetap landscape.
+       Berlaku global untuk semua .proj-video, bukan hanya di grid. */
+    $$('.proj-video').forEach((video) => {
+      const sync = () => {
+        const box = video.closest('.proj-thumb');
+        const w = video.videoWidth, h = video.videoHeight;
+        if (!box || !w || !h) return;
+        // Clamp 0.5–2.4 supaya video ekstrem tidak bikin kartu terlalu tinggi.
+        const ratio = Math.min(2.4, Math.max(0.5, w / h));
+        box.style.setProperty('--video-ar', String(Math.round(ratio * 1000) / 1000));
+      };
+      if (video.readyState >= 1) sync();
+      video.addEventListener('loadedmetadata', sync);
+    });
+
+    function videoTitle(video) {
+      const heading = video.closest('.proj')?.querySelector('h3');
+      return heading ? heading.textContent.trim() : 'video';
+    }
+
+    function setIcon(button, symbolId) {
+      const iconUse = button && $('use', button);
+      if (iconUse) iconUse.setAttribute('href', '#' + symbolId);
+    }
+
+    function updatePlayButton(video) {
+      const card = video.closest('.proj');
+      const button = card && $('.video-play-toggle', card);
+      if (!button) return;
+
+      const playing = !video.paused && !video.ended;
+      const action = playing ? 'Pause' : 'Play';
+      const title = videoTitle(video);
+      const label = $('.video-control-label', button);
+
+      button.setAttribute('aria-label', action + ' ' + title);
+      button.setAttribute('aria-pressed', String(playing));
+      setIcon(button, playing ? 'i-pause' : 'i-play');
+      if (label) label.textContent = action;
+    }
+
+    function updateSoundButton(video) {
+      const card = video.closest('.proj');
+      const button = card && $('.video-sound-toggle', card);
+      if (!button) return;
+
+      const muted = video.muted;
+      const action = muted ? 'Unmute' : 'Mute';
+      const title = videoTitle(video);
+      const label = $('.video-control-label', button);
+
+      button.setAttribute('aria-label', action + ' ' + title);
+      button.setAttribute('aria-pressed', String(muted));
+      setIcon(button, muted ? 'i-volume-x' : 'i-volume-2');
+      if (label) label.textContent = action;
+    }
+
+    function updateVideoControls(video) {
+      updatePlayButton(video);
+      updateSoundButton(video);
+    }
+
+    function configureVideo(video) {
+      video.loop = true;
+      video.playsInline = true;
+      video.muted = true;
+      video.setAttribute('muted', '');
+      video.setAttribute('loop', '');
+      video.setAttribute('playsinline', '');
+      video.setAttribute('controlsList', 'nodownload');
+      if ('disablePictureInPicture' in video) video.disablePictureInPicture = true;
+      video.pause();
+    }
+
+/* Sembunyikan fallback begitu video punya frame. Kalau gagal dimuat,
+   fallback tetap tampil sebagai pengganti yang rapi. */
+    function markFrameReady(video) {
+      const frame = video.closest('.proj-thumb');
+      if (!frame) return;
+
+/* Fallback disembunyikan hanya bila readyState >= 2 (ada frame ter-decode)
+   DAN video bisa di-seek. Tanpa syarat kedua, server tanpa HTTP Range
+   menyisakan kotak polos. */
+      const canShowFrame = () => {
+        if (video.readyState < 2 || video.videoWidth === 0) return false;
+        const seekable = video.seekable && video.seekable.length
+          ? video.seekable.end(0)
+          : (video.duration || 0);
+        return seekable > 0.5;
+      };
+
+/* Tunggu frame benar-benar ter-render (rAF ganda) sebelum disembunyikan;
+   di headless data sudah ada tapi belum terpaint. */
+      let tries = 0;
+      const check = () => {
+        tries++;
+        const ok = canShowFrame();
+        if (ok) {
+          requestAnimationFrame(() => requestAnimationFrame(() => {
+            frame.classList.add('has-video');
+          }));
+          return;
+        }
+        if (tries < 25) setTimeout(check, 200);
+      };
+
+      check();
+      video.addEventListener('seeked', () => setTimeout(check, 80), { once: false });
+      video.addEventListener('playing', () => frame.classList.add('has-video'), { once: true });
+    }
+
+/* Frame pratinjau terbaik: sample beberapa titik waktu, ambil yang
+   variance luminance-nya paling tinggi (frame 0 biasanya gelap).
+   Dihitung di canvas 32x18 — jauh lebih murah dari piksel penuh. */
+    function findBestPreviewFrame(video, done) {
+      const dur = video.duration;
+      if (!dur || !isFinite(dur) || dur <= 0) { done(false); return; }
+
+      // 3 titik waktu sudah cukup untuk melewati frame hitam di awal,
+      // dan menjaga jumlah request tetap rendah.
+      const candidates = [dur * 0.08, dur * 0.34, dur * 0.62]
+        .map((t) => Math.min(dur * 0.92, Math.max(0.2, t)));
+
+      const canvas = document.createElement('canvas');
+      canvas.width = 32; canvas.height = 18;
+      const ctx = canvas.getContext('2d', { willReadFrequently: true });
+
+      let best = null;
+      let bestScore = -1;
+      let idx = 0;
+
+      const tryNext = () => {
+        if (idx >= candidates.length) {
+          if (best !== null) {
+            video.currentTime = best;
+            video.pause();
+          }
+          done(best !== null);
+          return;
+        }
+        const target = candidates[idx++];
+        const onSeeked = () => {
+          video.removeEventListener('seeked', onSeeked);
+          let score = 0;
+          try {
+            ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+            const data = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+            let sum = 0, sumSq = 0, n = 0;
+            for (let p = 0; p < data.length; p += 4) {
+              const lum = (data[p] * 0.299 + data[p + 1] * 0.587 + data[p + 2] * 0.114);
+              sum += lum; sumSq += lum * lum; n++;
+            }
+            // Variance luminance = seberapa banyak detail di frame ini.
+            const mean = sum / n;
+            score = sumSq / n - mean * mean;
+          } catch (e) {
+            score = 0;
+          }
+          if (score > bestScore) { bestScore = score; best = target; }
+          setTimeout(tryNext, 60);
+        };
+        video.addEventListener('seeked', onSeeked, { once: true });
+        try {
+          video.currentTime = target;
+        } catch (e) {
+          setTimeout(tryNext, 40);
+        }
+      };
+
+      tryNext();
+    }
+
+    function prepareNativeVideoFrame(video) {
+/* "Bisa di-seek" hanya valid SETELAH metadata termuat; kalau dicek lebih
+   awal, video.seekable kosong dan thumbnail tetap polos. */
+      const run = () => {
+        if (video.readyState < 2) return;
+        const canSeek = video.seekable && video.seekable.length &&
+          video.seekable.end(0) > 0.5;
+        // Tidak bisa di-seek (server tanpa Range) -> andalkan fallback.
+        if (!canSeek) return;
+        findBestPreviewFrame(video, () => {});
+      };
+
+      if (video.readyState >= 1) run();
+      else {
+        video.addEventListener('loadedmetadata', run, { once: true });
+        video.addEventListener('loadeddata', run, { once: true });
+      }
+    }
+
+    gridVideos.forEach((video) => {
+      configureVideo(video);
+
+      const card = video.closest('.proj');
+      const playButton = card && $('.video-play-toggle', card);
+      const soundControl = card && $('.video-sound-toggle', card);
+
+      video.addEventListener('contextmenu', (event) => event.preventDefault());
+      video.addEventListener('play', () => updateVideoControls(video));
+      video.addEventListener('pause', () => updateVideoControls(video));
+      video.addEventListener('volumechange', () => updateSoundButton(video));
+      video.addEventListener('error', () => {
+        video.classList.add('is-missing');
+        const f = video.closest('.proj-thumb');
+        if (f) f.classList.add('has-video'); // tampilkan fallback
+      });
+
+      const bigPlay = card && $('.proj-play', card);
+      if (bigPlay) {
+        bigPlay.addEventListener('click', (event) => {
+          event.stopPropagation();
+          if (playButton) playButton.click();
+        });
+      }
+
+      if (playButton) {
+        playButton.addEventListener('click', (event) => {
+          event.stopPropagation();
+          if (!video.paused && !video.ended) {
+            video.pause();
+            return;
+          }
+
+          if (video.ended) video.currentTime = 0;
+          const playPromise = video.play();
+          if (playPromise && typeof playPromise.catch === 'function') {
+            playPromise.catch(() => updateVideoControls(video));
+          }
+        });
+      }
+
+      if (soundControl) {
+        soundControl.addEventListener('click', (event) => {
+          event.stopPropagation();
+          video.muted = !video.muted;
+          updateSoundButton(video);
+        });
+      }
+
+      // Hover untuk pratinjau: mulai main saat kursor masuk, kembali ke
+      // posisi frame awal saat keluar. Ini membuat grid terasa hidup.
+      let hoverTimer = 0;
+      const startPreview = () => {
+        if (reduced) return;
+        clearTimeout(hoverTimer);
+        hoverTimer = setTimeout(() => {
+          if (card) card.classList.add('is-previewing');
+          video.play().catch(() => {});
+        }, 420);
+      };
+      const stopPreview = () => {
+        clearTimeout(hoverTimer);
+        if (card) card.classList.remove('is-previewing');
+        if (!video.paused) { video.pause(); try { video.currentTime = 1; } catch (e) {} }
+      };
+      if (card) {
+        card.addEventListener('mouseenter', startPreview);
+        card.addEventListener('mouseleave', stopPreview);
+        card.addEventListener('focusin', startPreview);
+        card.addEventListener('focusout', stopPreview);
+      }
+
+      markFrameReady(video);
+      prepareNativeVideoFrame(video);
+      updateVideoControls(video);
+    });
+
+    /* ---- Sinkronkan semua link sosial ke konstanta SOCIAL ---- */
+    function initSocialLinks() {
+      const fixed = syncSocialLinks();
+
+      // Tampilkan handle resmi di teks UI (mis. "@raka_cihuyyy" di contact hub)
+      // supaya teks dan href tidak pernah berbeda.
+      $$('[data-social-text]').forEach((el) => {
+        const p = el.getAttribute('data-social-text');
+        if (p === 'instagram') el.textContent = '@' + SOCIAL.instagram;
+        if (p === 'tiktok') el.textContent = '@' + SOCIAL.tiktok;
+        if (p === 'sociabuzz') el.textContent = SOCIAL.sociabuzz;
+        if (p === 'whatsapp') el.textContent = formatWaDisplay(SOCIAL.whatsapp);
+        if (p === 'email') el.textContent = SOCIAL.email;
+      });
+
+      if (fixed > 0) console.info('[SOCIAL] ' + fixed + ' link diperbaiki dari konstanta SOCIAL.');
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initSocialLinks);
+    } else {
+      initSocialLinks();
+    }
+
+  })();
+  </script>
+</body>
+</html>
